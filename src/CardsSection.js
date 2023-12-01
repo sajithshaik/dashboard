@@ -2,12 +2,7 @@ import React from 'react';
 import {Card} from'@uifabric/react-cards'
 import { Text, initializeIcons } from '@fluentui/react';
 import 'office-ui-fabric-react/dist/css/fabric.css';
-import LinechartComponent from './LinechartComponent';
-import BarchartComponent from './BarchartComponent';
 import PieChart from './PieChart';
-import Linechart1 from './Linechart1';
-import Barchart1 from './Barchart1';
-import Piechart1 from './Piechart1';
 
 
 const container = {
@@ -74,8 +69,6 @@ const cards = [
     {
         title: 'Secure Score',
         yourScore: '65/100',
-        // amount: '6/100',
-        // icon: 'Money',
         icon: 'PaymentCard',
         organizationScore: '46.96/100',
         // percentage: '6.5',
@@ -84,7 +77,6 @@ const cards = [
     {
         title: 'Compilance Score',
         yourScore: '298/700',
-        // amount: '21/700',
         icon: 'PaymentCard',
         organizationScore: '298/700',
         // percentage: '0.3',
@@ -93,8 +85,6 @@ const cards = [
     {
         title: 'Adoption Score',
         yourScore: '90/700',
-        // amount: '90/700',
-        // icon: 'Savings',
         icon: 'PaymentCard',
         organizationScore: '260/700',
         // percentage: '1.3',

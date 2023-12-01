@@ -4,12 +4,11 @@ import './App.css';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { Nav, initializeIcons } from '@fluentui/react';
 import CardsSection from './CardsSection';
-import Stats from './Stats';
-import Licenses from './Licenses';
-import ComplianceScore from './ComplianceScore';
-import SecureScore from './SecureScore';
-import AdoptionScore from './AdoptionScore';
 import GovernanceCore from './GovernanceCore';
+import TenantList from './TenantList';
+import Subscription from './Subscription';
+import Domains from './Domains';
+import Header from './Header';
 
 
 const links = [
@@ -59,12 +58,12 @@ const links = [
               }
           },
           {
-              name: 'Governance Core',
-              url: '/governancecore',
+              name: 'Check List',
+              url: '/checklist',
               key: 'key4',
               iconProps: {
                   // iconName: 'SwitcherStartEnd',
-                  iconName: 'PaymentCard',
+                  iconName: 'CheckList',
                   styles: {
                       root: {
                           fontSize: 20,
@@ -73,50 +72,21 @@ const links = [
                   }
               }
           },
-        //   {
-        //       name: 'Secure Score',
-        //       url: '/securescore',
-        //       key: 'key5',
-        //       iconProps: {
-        //           // iconName: 'SwitcherStartEnd',
-        //           iconName: 'PaymentCard',
-        //           styles: {
-        //               root: {
-        //                   fontSize: 20,
-        //                   color: '#106ebe' 
-        //               }
-        //           }
-        //       }
-        //   },
-        //   {
-        //       name: 'Adoption Score',
-        //       url: '/adoptionscore',
-        //       key: 'key6',
-        //       iconProps: {
-        //           // iconName: 'SwitcherStartEnd',
-        //           iconName: 'PaymentCard',
-        //           styles: {
-        //               root: {
-        //                   fontSize: 20,
-        //                   color: '#106ebe' 
-        //               }
-        //           }
-        //       }
-        //   },
-        //   {
-        //       name: 'Settings',
-        //       url: '/settings',
-        //       key: 'key7',
-        //       iconProps: {
-        //           iconName: 'PlayerSettings',
-        //           styles: {
-        //               root: {
-        //                  fontSize: 20,
-        //                  color: '#106ebe' 
-        //               }
-        //           }
-        //       }
-        //   },
+          {
+            name: 'Tenant List',
+            url: '/tenantslist',
+            key: 'key5',
+            iconProps: {
+                 iconName: 'List',
+                // iconName: 'PaymentCard',
+                styles: {
+                    root: {
+                        fontSize: 20,
+                        color: '#106ebe' 
+                    }
+                }
+            }
+        },
       ]
   }
 ]
@@ -133,6 +103,7 @@ const navigationStyles = {
   }
 }
 
+
 const App = () => {
   initializeIcons();
   const [selectedKey, setSelectedKey] = useState('');
@@ -145,6 +116,7 @@ const App = () => {
     <Router>
       <div className="ms-Grid" dir="ltr">
         <div className="ms-Grid-row">
+          <Header />
           <div className="ms-Grid-col ms-sm-1 ms-xl1">
             {/* Navigation component */}
             <Nav
@@ -160,11 +132,10 @@ const App = () => {
               {/* Content based on the route */}
               <Routes>
                 <Route path="/" element={<CardsSection />} />
-                <Route path="/subscription" element={<Stats />} />
-                <Route path="/domains" element={<Licenses />} />
-                <Route path="/governancecore" element={<GovernanceCore />} />
-                <Route path="/securescore" element={<SecureScore />} />
-                <Route path="/adoptionscore" element={<AdoptionScore />} />
+                <Route path="/subscription" element={<Subscription />} />
+                <Route path="/domains" element={<Domains />} />
+                <Route path="/checklist" element={<GovernanceCore />} />
+                <Route path="/tenantslist" element={<TenantList />} />
                 {/* Add routes for /securescore, /adoptionscore, /settings as needed */}
               </Routes>
             </div>
